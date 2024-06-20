@@ -1,17 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
-// Déclaration des components ou composants
+
+// Déclaration des components ou composants autonomes
+// pour appliquer le principe de modularité
 const Title = ({ content }) => <h1>{content}</h1>;
-const ComponentReact = () => {
+
+const Component = ({ title, link }) => {
   return (
     <>
       <a
         className="App-link"
-        href="https://reactjs.org"
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Learn React
+        Learn {title}
       </a>
       <br />
     </>
@@ -51,15 +54,14 @@ const ComponentAngular = () => {
 };
 
 function App() {
-  const libraries = ["Learn React", "Learn Angular", "Learn Vue"];
+  // const libraries = ["Learn React", "Learn Angular", "Learn Vue"];
   return (
     <div className="App">
       <header className="App-header">
-        <Title content="Welcome !" />
-        <ComponentReact />
+        <Title content="Welcome!" />
+        <Component title="React" link="https://reactjs.org" />
         <ComponentVue />
         <ComponentAngular />
-        
       </header>
     </div>
   );
